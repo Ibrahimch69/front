@@ -3,6 +3,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import axios from 'axios'
 import {createBrowserHistory} from 'history'
 import { useState } from 'react'
+import Navbar from './Navbar'
  
 const Login=()=>{
  
@@ -36,6 +37,7 @@ const Login=()=>{
     localStorage.setItem("users",responce.data);
     localStorage.setItem('users',responce.data);
   history.push('/home')
+  window.location.reload()
   
   }) 
   }
@@ -51,21 +53,23 @@ const Login=()=>{
  
     
     return(
+   <div> 
+     <Navbar/>
       <div style={flex}>
 
 
       <form style={form}>
-      
+    
       <h1>LOGIN</h1>
       
       
       <br></br>
       <label>Votre Email</label>
       
-      <input  onChange={(e)=>onInputChange(e)} value={email} name="email" className="form-control input-sm" type="text" placeholder="Email" aria-label="Repository description" />
+      <input  onChange={(e)=>onInputChange(e)} value={email} name="email" className="form-control input-sm" type="Email" placeholder="Email" aria-label="Repository description" />
       <br></br>
       <label>mots de passe</label>
-      <input  onChange={(e)=>onInputChange(e)} name="password" value={password}  className="form-control input-sm" type="text" placeholder="Mots de passe" aria-label="Repository description" />
+      <input  onChange={(e)=>onInputChange(e)} name="password" value={password}  className="form-control input-sm" type="password" placeholder="Mots de passe" aria-label="Repository description" />
       <br></br>
       
       <button  onClick={login_login} className="btn btn-dark" type="button">login</button>
@@ -73,7 +77,7 @@ const Login=()=>{
       </form>
       
        </div>
-        
+       </div>
     )
 } 
 
