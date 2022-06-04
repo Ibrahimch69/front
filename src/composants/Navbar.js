@@ -11,7 +11,7 @@ const Navbar = () => {
 
        <Link to={"/signup"}> <p className='nav-link active'>Register</p></Link>
           <li class="nav-item">
-          <Link to={"/login"}> <p className='nav-link active'>login</p></Link>
+          <Link to={"/"}> <p className='nav-link active'>login</p></Link>
           </li>
         
         </ul>
